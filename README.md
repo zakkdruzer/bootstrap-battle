@@ -40,4 +40,4 @@ Incluye navegación adaptada al restaurante, promo del día, galería, carta de 
 
 El proyecto está publicado en GitHub Pages:
 
-- GitHub Pages: **https://github.com/zakkdruzer/bootstrap-battle/**
+- GitHub Pages: **https://zakkdruzer.github.io/bootstrap-battle/**
