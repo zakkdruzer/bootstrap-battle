@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="es" data-bs-theme="dark"> <!-- Tema personalizado: modo oscuro y colores de marca -->
+  <head>
+    <style>
+      :root {
+        --bs-body-bg: #121212;
+        --bs-body-color: #f8f9fa;
+        --bs-primary: #ff6f00;
+        --bs-danger: #ff3d00;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>La Cantina del Dev</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Navbar restaurante -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+      <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand fw-bold" href="#">La Cantina del Dev</a>
+
+        <!-- Botón hamburguesa -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#restoNavbar"
+          aria-controls="restoNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menú colapsable -->
+        <div class="collapse navbar-collapse" id="restoNavbar">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#menu">Menú</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#reservas">Reservas</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#nosotros">Nosotros</a>
+            </li>
+
+            <!-- Dropdown del menú -->
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="menuDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Categorías
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="menuDropdown">
+                <li><a class="dropdown-item" href="#">Entradas</a></li>
+                <li><a class="dropdown-item" href="#">Fondos</a></li>
+                <li><a class="dropdown-item" href="#">Postres</a></li>
+                <li><a class="dropdown-item" href="#">Bebidas</a></li>
+              </ul>
+            </li>
+
+            <!-- Link tipo botón: "Reservar ahora" -->
+            <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+              <a
+                class="nav-link btn btn-danger text-white px-3"
+                href="#reservas"
+              >
+                Reservar ahora
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Promo del día -->
+    <div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
+      🎉 Hoy 2×1 en todos los fondos hasta las 15:00.
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Cerrar"
+      ></button>
+    </div>
+
+    <main class="py-4">
+      <div class="container">
+        <!-- Breadcrumb de navegación -->
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
+            <li class="breadcrumb-item"><a href="#menu">Menú</a></li>
+            <li
+              class="breadcrumb-item active"
+              aria-current="page"
+            >
+              Fondos
+            </li>
+          </ol>
+        </nav>
+
+                <!-- Carousel del restaurante -->
+        <div
+          id="restoCarousel"
+          class="carousel slide mt-4"
+        >
+          <!-- Indicadores -->
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#restoCarousel"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#restoCarousel"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#restoCarousel"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+
+          <!-- Slides -->
+          <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <svg
+                class="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
+                width="800"
+                height="400"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Tacos al pastor"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <rect width="100%" height="100%" fill="#ffc107"></rect>
+                <text
+                  x="50%"
+                  y="50%"
+                  fill="#5f370e"
+                  dy=".3em"
+                  text-anchor="middle"
+                  font-size="40"
+                >
+                  🌮 Tacos al pastor
+                </text>
+              </svg>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Tacos al pastor</h5>
+                <p>Nuestro clásico con piña asada y salsa de la casa.</p>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <svg
+                class="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
+                width="800"
+                height="400"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Burrito veggie"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <rect width="100%" height="100%" fill="#fd7e14"></rect>
+                <text
+                  x="50%"
+                  y="50%"
+                  fill="#fff3cd"
+                  dy=".3em"
+                  text-anchor="middle"
+                  font-size="40"
+                >
+                  🌯 Burrito veggie
+                </text>
+              </svg>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Burrito veggie</h5>
+                <p>Relleno de vegetales grillados y frijoles negros.</p>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+              <svg
+                class="bd-placeholder-img bd-placeholder-img-lg d-block w-100"
+                width="800"
+                height="400"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="Margarita de la casa"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <rect width="100%" height="100%" fill="#dc3545"></rect>
+                <text
+                  x="50%"
+                  y="50%"
+                  fill="#f8d7da"
+                  dy=".3em"
+                  text-anchor="middle"
+                  font-size="40"
+                >
+                  🍹 Margarita
+                </text>
+              </svg>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Bar y terraza</h5>
+                <p>Cócteles de autor y vista al atardecer.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controles -->
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#restoCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#restoCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
+
+                <!-- Platos destacados -->
+        <section class="mt-5" id="menu">
+          <h2 class="mb-4 text-center">Platos destacados</h2>
+          <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-12 col-lg-4 d-flex">
+              <div class="card h-100 w-100">
+                <!-- "Imagen" SVG -->
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="220"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Tacos al pastor"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <rect width="100%" height="100%" fill="#ffe5b4"></rect>
+                  <text
+                    x="50%"
+                    y="50%"
+                    fill="#8b4513"
+                    dy=".3em"
+                    text-anchor="middle"
+                    font-size="40"
+                  >
+                    🌮
+                  </text>
+                </svg>
+
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Tacos al pastor</h5>
+                  <p class="card-text flex-grow-1">
+                    Tortillas de maíz con cerdo marinado, piña asada y salsa de la casa.
+                  </p>
+                  <span class="badge bg-danger align-self-start">
+                    $7.990
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-12 col-lg-4 d-flex">
+              <div class="card h-100 w-100">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="220"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Burrito doble queso"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <rect width="100%" height="100%" fill="#ffd6a5"></rect>
+                  <text
+                    x="50%"
+                    y="50%"
+                    fill="#6f3700"
+                    dy=".3em"
+                    text-anchor="middle"
+                    font-size="40"
+                  >
+                    🌯
+                  </text>
+                </svg>
+
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Burrito doble queso</h5>
+                  <p class="card-text flex-grow-1">
+                    Relleno de carne, frijoles, vegetales grillados y mezcla de quesos.
+                  </p>
+                  <span class="badge bg-success align-self-start">
+                    $8.490
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-12 col-lg-4 d-flex">
+              <div class="card h-100 w-100">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="220"
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  aria-label="Nachos supremos"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                >
+                  <rect width="100%" height="100%" fill="#fff3cd"></rect>
+                  <text
+                    x="50%"
+                    y="50%"
+                    fill="#856404"
+                    dy=".3em"
+                    text-anchor="middle"
+                    font-size="40"
+                  >
+                    🧀
+                  </text>
+                </svg>
+
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Nachos supremos</h5>
+                  <p class="card-text flex-grow-1">
+                    Totopos crujientes con queso fundido, guacamole y pico de gallo.
+                  </p>
+                  <span class="badge bg-primary align-self-start">
+                    $6.990
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+              <!-- Carta de precios -->
+      <section class="mt-5">
+        <div class="container">
+          <h2 class="mb-4 text-center">Carta de precios</h2>
+
+          <div class="table-responsive">
+            <table class="table table-striped table-hover align-middle">
+              <caption class="caption-top">
+                Precios incluyen IVA
+              </caption>
+              <thead class="table-light">
+                <tr>
+                  <th scope="col">Plato</th>
+                  <th scope="col">Descripción</th>
+                  <th scope="col">Precio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Tacos al pastor</td>
+                  <td>Tortillas de maíz con cerdo marinado y piña asada.</td>
+                  <td>$7.990</td>
+                </tr>
+                <tr>
+                  <td>Burrito doble queso</td>
+                  <td>Carne, frijoles, vegetales grillados y mezcla de quesos.</td>
+                  <td>$8.490</td>
+                </tr>
+                <tr>
+                  <td>Nachos supremos</td>
+                  <td>Totopos con queso fundido, guacamole y pico de gallo.</td>
+                  <td>$6.990</td>
+                </tr>
+                <tr>
+                  <td>Quesadilla de pollo</td>
+                  <td>Tortilla rellena de pollo a la plancha y queso cheddar.</td>
+                  <td>$7.490</td>
+                </tr>
+                <!-- Plato más caro destacado -->
+                <tr class="table-warning">
+                  <td>Parrillada La Cantina</td>
+                  <td>Mix de carnes para 2 personas con acompañamientos.</td>
+                  <td>$15.990</td>
+                </tr>
+                <tr>
+                  <td>Brownie con helado</td>
+                  <td>Brownie tibio de chocolate con helado de vainilla.</td>
+                  <td>$5.990</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+                <div class="text-center mb-3">
+            <button
+              type="button"
+              class="btn btn-outline-info"
+              data-bs-toggle="popover"
+              data-bs-placement="bottom"
+              title="Promoción 2×1"
+              data-bs-content="Aplica solo a platos de fondo de lunes a viernes hasta las 15:00."
+            >
+              Más info sobre la promo
+            </button>
+          </div>
+
+            <!-- Formulario de reserva -->
+      <section class="mt-5 mb-5" id="reservas">
+        <div class="container">
+          <h2 class="mb-4 text-center">Reserva tu mesa</h2>
+
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8">
+              <div class="card shadow">
+                <div class="card-body">
+                  <h5 class="card-title mb-3">Completa tus datos</h5>
+
+                  <form id="formReserva" class="needs-validation" novalidate>
+                    <div class="row g-3">
+                      <!-- Nombre -->
+                      <div class="col-12 col-md-6">
+                        <label for="reservaNombre" class="form-label">Nombre</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="reservaNombre"
+                          name="nombre"
+                          required
+                        />
+                        <div class="invalid-feedback">
+                          Por favor ingresa tu nombre.
+                        </div>
+                      </div>
+
+                      <!-- Email -->
+                      <div class="col-12 col-md-6">
+                        <label for="reservaEmail" class="form-label">Email</label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="reservaEmail"
+                          name="email"
+                          required
+                        />
+                        <div class="invalid-feedback">
+                          Ingresa un email válido.
+                        </div>
+                      </div>
+
+                      <!-- Fecha -->
+                      <div class="col-12 col-md-6">
+                        <label for="reservaFecha" class="form-label">Fecha</label>
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="reservaFecha"
+                          name="fecha"
+                          required
+                        />
+                        <div class="invalid-feedback">
+                          Selecciona una fecha para tu reserva.
+                        </div>
+                      </div>
+
+                      <!-- Hora -->
+                      <div class="col-12 col-md-6">
+                        <label for="reservaHora" class="form-label">Hora</label>
+                        <input
+                          type="time"
+                          class="form-control"
+                          id="reservaHora"
+                          name="hora"
+                          required
+                        />
+                        <div class="invalid-feedback">
+                          Selecciona una hora para tu reserva.
+                        </div>
+                      </div>
+
+                      <!-- Personas -->
+                      <div class="col-12 col-md-6">
+                        <label for="reservaPersonas" class="form-label"
+                          >Número de personas</label
+                        >
+                        <select
+                          class="form-select"
+                          id="reservaPersonas"
+                          name="personas"
+                          required
+                        >
+                          <option value="">Selecciona...</option>
+                          <option value="1">1 persona</option>
+                          <option value="2">2 personas</option>
+                          <option value="3">3 personas</option>
+                          <option value="4">4 personas</option>
+                          <option value="5">5 personas</option>
+                          <option value="6">6 personas</option>
+                          <option value="7">7 personas</option>
+                          <option value="8">8 personas</option>
+                          <option value="9">9 personas</option>
+                          <option value="10+">10 o más</option>
+                        </select>
+                        <div class="invalid-feedback">
+                          Indica cuántas personas vendrán.
+                        </div>
+                      </div>
+
+                      <!-- Peticiones especiales -->
+                      <div class="col-12 col-md-6">
+                        <label for="reservaNotas" class="form-label"
+                          >Peticiones especiales</label
+                        >
+                        <textarea
+                          class="form-control"
+                          id="reservaNotas"
+                          name="notas"
+                          rows="3"
+                          placeholder="Ej: mesa cerca de la ventana, opción vegetariana..."
+                        ></textarea>
+                        <div class="invalid-feedback">
+                          Si no tienes peticiones, puedes dejar este campo vacío.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="mt-4 text-end">
+                      <button
+                        type="submit"
+                        class="btn btn-danger"
+                        id="btnEnviarReserva"
+                      >
+                        Confirmar reserva
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      </div>
+    </main>
+    
+        <!-- Modal de confirmación de reserva -->
+    <div
+      class="modal fade"
+      id="reservaModal"
+      tabindex="-1"
+      aria-labelledby="reservaModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title" id="reservaModalLabel">
+              ✅ ¡Reserva confirmada!
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-2">
+              Gracias por reservar en <strong>La Cantina del Dev</strong>.
+            </p>
+            <!-- Resumen (versión básica) -->
+            <p class="mb-1">
+              Tu mesa ha sido reservada. Te esperamos en la fecha y hora seleccionadas.
+            </p>
+
+            <!-- Desafío extra: datos dinámicos -->
+            <div class="mt-3">
+              <p class="mb-1">
+                <strong>Nombre:</strong>
+                <span id="resumenNombre">—</span>
+              </p>
+              <p class="mb-1">
+                <strong>Fecha:</strong>
+                <span id="resumenFecha">—</span>
+              </p>
+              <p class="mb-1">
+                <strong>Hora:</strong>
+                <span id="resumenHora">—</span>
+              </p>
+              <p class="mb-1">
+                <strong>Personas:</strong>
+                <span id="resumenPersonas">—</span>
+              </p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap 5 JS bundle -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    
+    <script>
+      (function () {
+        "use strict";
+
+        const form = document.getElementById("formReserva");
+
+        if (!form) return;
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+          event.stopPropagation();
+
+          if (!form.checkValidity()) {
+            form.classList.add("was-validated");
+            return;
+          }
+
+          form.classList.add("was-validated");
+
+          // Desafío extra: tomar valores del formulario
+          const nombre = document.getElementById("reservaNombre").value;
+          const fecha = document.getElementById("reservaFecha").value;
+          const hora = document.getElementById("reservaHora").value;
+          const personas = document.getElementById("reservaPersonas").value;
+
+          document.getElementById("resumenNombre").textContent = nombre;
+          document.getElementById("resumenFecha").textContent = fecha;
+          document.getElementById("resumenHora").textContent = hora;
+          document.getElementById("resumenPersonas").textContent = personas;
+
+          // Abrir modal usando la API JS
+          const modal = new bootstrap.Modal(
+            document.getElementById("reservaModal")
+          );
+          modal.show();
+        });
+      })();
+    </script>
+
+        <script>
+      // Inicializar todos los popovers
+      const popoverTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="popover"]')
+      );
+      const popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl);
+      });
+    </script>
+
+  </body>
+</html>
